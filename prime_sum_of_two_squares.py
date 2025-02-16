@@ -17,7 +17,7 @@ def is_sum_of_two_squares(n):
 if __name__ == "__main__":
     limit = 1000000
     num_good_primes = 0
-    for n in range(1, limit):
-        if is_prime_optimized(n) and is_sum_of_two_squares(n):
+    for n in range(1, limit + 1):
+        if is_prime(n) and is_sum_of_two_squares(n):
             num_good_primes += 1
     print(f"Number of good primes up to {limit}: {num_good_primes}")
