@@ -3,14 +3,8 @@ from sympy import factorint
 def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
-def reduce_factorization(factorization):
-    factors = []
-    for factor, count in factorization.items():
-        factors += [factor] * count
-    return factors
-
 def get_product_of_two_palindromes(n):
-    factors = reduce_factorization(factorint(n))
+    factors = set(factorint(n).keys())
     for factor in factors:
         if is_palindrome(factor) and is_palindrome(n // factor):
             return True
